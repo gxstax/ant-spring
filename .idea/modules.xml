@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ant-spring.iml" filepath="$PROJECT_DIR$/ant-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ant-spring-web/ant-spring-web.iml" filepath="$PROJECT_DIR$/ant-spring-web/ant-spring-web.iml" />
     </modules>
   </component>
 </project>
