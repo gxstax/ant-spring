@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ant-spring.iml" filepath="$PROJECT_DIR$/ant-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/ant-spring-web/ant-spring-web.iml" filepath="$PROJECT_DIR$/ant-spring-web/ant-spring-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxyDemo/proxyDemo.iml" filepath="$PROJECT_DIR$/proxyDemo/proxyDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxyDemo/proxyDemo.iml" filepath="$PROJECT_DIR$/proxyDemo/proxyDemo.iml" />
     </modules>
   </component>
 </project>

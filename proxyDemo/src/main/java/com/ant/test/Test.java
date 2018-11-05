@@ -1,6 +1,8 @@
 package com.ant.test;
 
+import com.ant.dao.UserDao;
 import com.ant.dao.UserDaoImpl;
+import com.ant.proxy.ProxyUtil;
 import com.ant.proxy1.UserDaoLog;
 
 /**
@@ -12,13 +14,13 @@ import com.ant.proxy1.UserDaoLog;
  */
 public class Test {
     public static void main(String[] args) {
-        UserDaoImpl target = new UserDaoImpl();
+//        UserDaoImpl target = new UserDaoImpl();
+//
+//        UserDaoLog proxy = new UserDaoLog(target);
+//
+//        proxy.query();
 
-        UserDaoLog proxy = new UserDaoLog(target);
-
-        proxy.query();
-
-//        UserDaoImpl dao = new UserDaoLogImpl();
+        UserDao dao = (UserDao) ProxyUtil.instance(UserDao.class);
 //        dao.query();
     }
 }
