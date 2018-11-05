@@ -15,7 +15,7 @@ import java.util.List;
  * @Version 1.0
  */
 
-@Repository
+//@Repository("userDao")
 public class UserDaoImpl implements UserDao{
 
     @Override

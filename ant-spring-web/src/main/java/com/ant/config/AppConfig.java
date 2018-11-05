@@ -1,6 +1,7 @@
 package com.ant.config;
 
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,6 +17,7 @@ import javax.sql.DataSource;
  * @Version 1.0
  */
 @Configuration
+@MapperScan("com.ant")
 @ComponentScan("com.ant")
 public class AppConfig {
 
@@ -28,7 +30,7 @@ public class AppConfig {
     }
 
     @Bean("dataSource")
-    public DriverManagerDataSource dataSource () {
+    public DataSource dataSource () {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/mybatisTest");

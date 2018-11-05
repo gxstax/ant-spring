@@ -36,4 +36,13 @@ public class User {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("userName:" + userName)
+                .append(" age:" + age)
+                .append(" desc:"+ desc)
+                .toString();
+    }
 }

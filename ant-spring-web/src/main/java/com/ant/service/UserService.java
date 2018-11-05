@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService {
+
     @Autowired
     private UserDao userDao;
 
     public void queryUser() {
-        System.out.println(userDao.query());
+        System.out.println(userDao.query().toString());
     }
 }
