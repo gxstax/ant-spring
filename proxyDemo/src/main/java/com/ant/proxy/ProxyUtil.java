@@ -45,7 +45,7 @@ public class ProxyUtil {
         constracSb.append(tab).append("}").append(line);
 
         for (int i = 0; i < methods.length; i++) {
-            String returnTypeNam = methods[i].getReturnType().getName();
+            String returnTypeNam = methods[i].getReturnType().getSimpleName();
             String methodNam = methods[i].getName();
             String argContent = "";
             String paramsContent = "";
@@ -67,9 +67,15 @@ public class ProxyUtil {
             methodSb.append(tab).append(tab)
                     .append("System.out.println(\"---- LOG -------\");")
                     .append(line);
-            methodSb.append(tab).append(tab).append("targ.").append(methodNam)
-                    .append("(").append(paramsContent).append(");").append(line);
-            methodSb.append(tab).append("}").append(line);
+            if(returnTypeNam.equals("void")) {
+                methodSb.append(tab).append(tab).append("targ.").append(methodNam)
+                        .append("(").append(paramsContent).append(");").append(line);
+                methodSb.append(tab).append("}").append(line);
+            }else {
+                methodSb.append(tab).append(tab).append("return targ.").append(methodNam)
+                        .append("(").append(paramsContent).append(");").append(line);
+                methodSb.append(tab).append("}").append(line);
+            }
 
         }
 

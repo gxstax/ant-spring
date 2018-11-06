@@ -20,6 +20,6 @@ public class Test {
 //        proxy.query();
 
         UserDao dao = (UserDao) ProxyUtil.instance(new UserDaoImpl());
-        dao.query("ant");
+        System.out.println(dao.querys("ant"));
     }
 }

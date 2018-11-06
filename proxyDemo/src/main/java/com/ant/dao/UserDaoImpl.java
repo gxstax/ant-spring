@@ -19,4 +19,9 @@ public class UserDaoImpl implements UserDao{
         System.out.println(str);
     }
 
+    @Override
+    public String querys(String str) {
+        return "this is returnStr";
+    }
+
 }

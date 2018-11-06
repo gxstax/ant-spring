@@ -26,4 +26,9 @@ public class UserDaoLog implements UserDao {
     public void query(String str) {
 
     }
+
+    @Override
+    public String querys(String str) {
+        return null;
+    }
 }
