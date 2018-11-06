@@ -1,18 +1,13 @@
 package com.ant.proxy;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
-
 import javax.tools.JavaCompiler;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.Objects;
 
 /**
  * @author gaoxx gaoxx@fxiaoke.com
@@ -24,7 +19,6 @@ import java.util.Objects;
 public class ProxyUtil {
 
     public static Object instance(Object targetInf) {
-
         Object object = null;
         Class target = targetInf.getClass().getInterfaces()[0];
         Method[] methods = target.getDeclaredMethods();
@@ -54,14 +48,17 @@ public class ProxyUtil {
             String returnTypeNam = methods[i].getReturnType().getName();
             String methodNam = methods[i].getName();
             String argContent = "";
-            Object args[] = methods[i].getParameterTypes();
+            String paramsContent = "";
+            Class args[] = methods[i].getParameterTypes();
             int j = 0;
-            for (Object arg : args) {
-                argContent+=arg.getClass().getSimpleName() + " p " +j + ",";
+            for (Class arg : args) {
+                argContent+=arg.getSimpleName() + " p" +j + ",";
+                paramsContent+= "p" + j + ",";
                 j++;
             }
             if(j > 0) {
-                argContent.substring(0,argContent.length()-1);
+                argContent = argContent.substring(0,argContent.length()-1);
+                paramsContent = paramsContent.substring(0,paramsContent.length()-1);
             }
             methodSb.append(tab).append("@Override").append(line);
             methodSb.append(tab).append("public ").append(returnTypeNam).append(" ")
@@ -71,7 +68,7 @@ public class ProxyUtil {
                     .append("System.out.println(\"---- LOG -------\");")
                     .append(line);
             methodSb.append(tab).append(tab).append("targ.").append(methodNam)
-                    .append("(").append(argContent).append(");").append(line);
+                    .append("(").append(paramsContent).append(");").append(line);
             methodSb.append(tab).append("}").append(line);
 
         }

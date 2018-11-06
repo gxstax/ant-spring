@@ -21,4 +21,9 @@ public class UserDaoLog implements UserDao {
         System.out.println("----------------- LOG --------------");
         dao.query();
     }
+
+    @Override
+    public void query(String str) {
+
+    }
 }
