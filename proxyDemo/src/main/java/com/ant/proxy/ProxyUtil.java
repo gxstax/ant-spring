@@ -12,7 +12,7 @@ import java.net.URLClassLoader;
 /**
  * @author gaoxx gaoxx@fxiaoke.com
  * @ClassName: ProxyUtil
- * @Description: TODO
+ * @Description: 动态代理工具类
  * @datetime 2018/11/5 11:50
  * @Version 1.0
  */
@@ -85,6 +85,9 @@ public class ProxyUtil {
             fw.flush();
             fw.close();
 
+            /**
+             * 利用编译工具把java文件手动生成一个class文件，供后面实例对象用
+             */
             JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
             StandardJavaFileManager fileMgr = compiler.getStandardFileManager(null,null,null);
             Iterable units = fileMgr.getJavaFileObjects(file);
@@ -92,7 +95,9 @@ public class ProxyUtil {
             t.call();
             fileMgr.close();
 
-
+            /**
+             * 利用反射自动生成一个代理类然后返回给调用对象
+             */
             URL urls[] = new URL[] {new URL("file:D:\\\\")};
             URLClassLoader urlClassLoader = new URLClassLoader(urls);
             Class clazz = urlClassLoader.loadClass("com.google.$proxy");
