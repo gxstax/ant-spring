@@ -1,10 +1,18 @@
 package com.ant.proxy;
 
+import jdk.nashorn.internal.objects.annotations.Constructor;
+
+import javax.tools.JavaCompiler;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Objects;
 
 /**
  * @author gaoxx gaoxx@fxiaoke.com
@@ -14,16 +22,11 @@ import java.lang.reflect.Method;
  * @Version 1.0
  */
 public class ProxyUtil {
-    public static void main(String[] args) {
-        StringBuilder packageSb = new StringBuilder();
-        StringBuilder importSb = new StringBuilder();
-        StringBuilder classSb = new StringBuilder();
-        StringBuilder constracSb = new StringBuilder();
-        StringBuilder methodSb = new StringBuilder();
 
-    }
+    public static Object instance(Object targetInf) {
 
-    public static Object instance(Class target) {
+        Object object = null;
+        Class target = targetInf.getClass().getInterfaces()[0];
         Method[] methods = target.getDeclaredMethods();
         String targetDao = target.getSimpleName();
 
@@ -36,13 +39,13 @@ public class ProxyUtil {
         StringBuilder constracSb = new StringBuilder();
         StringBuilder methodSb = new StringBuilder();
 
-        packageSb.append("package com.ant.google;").append(line);
+        packageSb.append("package com.google;").append(line);
         importSb.append("import com.ant.dao.UserDao;").append(line);
         classSb.append("public class $proxy implements ").append(targetDao)
                 .append("{").append(line);
-        constracSb.append("public ").append(targetDao)
-                .append("targ").append(line);
-        constracSb.append("public $proxy (").append(targetDao)
+        constracSb.append(tab).append("public ").append(targetDao)
+                .append(" targ;").append(line);
+        constracSb.append(tab).append("public $proxy (").append(targetDao)
                 .append(" targ ){").append(line);
         constracSb.append(tab).append(tab).append("this.targ = targ;").append(line);
         constracSb.append(tab).append("}").append(line);
@@ -61,15 +64,15 @@ public class ProxyUtil {
                 argContent.substring(0,argContent.length()-1);
             }
             methodSb.append(tab).append("@Override").append(line);
-            methodSb.append(tab).append("public ").append(returnTypeNam)
+            methodSb.append(tab).append("public ").append(returnTypeNam).append(" ")
                     .append(methodNam).append("(").append(argContent)
                     .append("){").append(line);
             methodSb.append(tab).append(tab)
-                    .append("system.out.println(\"---- LOG -------\");")
+                    .append("System.out.println(\"---- LOG -------\");")
                     .append(line);
             methodSb.append(tab).append(tab).append("targ.").append(methodNam)
-                    .append("(").append(argContent).append(")").append(line);
-            methodSb.append(tab).append(tab).append("}");
+                    .append("(").append(argContent).append(");").append(line);
+            methodSb.append(tab).append("}").append(line);
 
         }
 
@@ -84,11 +87,25 @@ public class ProxyUtil {
             fw.write(wholeSb.toString());
             fw.flush();
             fw.close();
-        } catch (IOException e) {
+
+            JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+            StandardJavaFileManager fileMgr = compiler.getStandardFileManager(null,null,null);
+            Iterable units = fileMgr.getJavaFileObjects(file);
+            JavaCompiler.CompilationTask t = compiler.getTask(null,fileMgr,null, null,null, units);
+            t.call();
+            fileMgr.close();
+
+
+            URL urls[] = new URL[] {new URL("file:D:\\\\")};
+            URLClassLoader urlClassLoader = new URLClassLoader(urls);
+            Class clazz = urlClassLoader.loadClass("com.google.$proxy");
+            java.lang.reflect.Constructor constructor = clazz.getConstructor(target);
+            object = constructor.newInstance(targetInf);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-        return null;
+        return object;
     }
 }

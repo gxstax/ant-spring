@@ -3,7 +3,6 @@ package com.ant.test;
 import com.ant.dao.UserDao;
 import com.ant.dao.UserDaoImpl;
 import com.ant.proxy.ProxyUtil;
-import com.ant.proxy1.UserDaoLog;
 
 /**
  * @author gaoxx gaoxx@fxiaoke.com
@@ -20,7 +19,7 @@ public class Test {
 //
 //        proxy.query();
 
-        UserDao dao = (UserDao) ProxyUtil.instance(UserDao.class);
-//        dao.query();
+        UserDao dao = (UserDao) ProxyUtil.instance(new UserDaoImpl());
+        dao.query();
     }
 }
