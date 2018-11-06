@@ -23,6 +23,7 @@ public class ProxyUtil {
         Class target = targetInf.getClass().getInterfaces()[0];
         Method[] methods = target.getDeclaredMethods();
         String targetDao = target.getSimpleName();
+        String targetDaoNam = target.getName();
 
         String line = "\r";
         String tab = "\t";
@@ -34,7 +35,7 @@ public class ProxyUtil {
         StringBuilder methodSb = new StringBuilder();
 
         packageSb.append("package com.google;").append(line);
-        importSb.append("import com.ant.dao.UserDao;").append(line);
+        importSb.append("import ").append(targetDaoNam).append(";").append(line);
         classSb.append("public class $proxy implements ").append(targetDao)
                 .append("{").append(line);
         constracSb.append(tab).append("public ").append(targetDao)
@@ -65,7 +66,7 @@ public class ProxyUtil {
                     .append(methodNam).append("(").append(argContent)
                     .append("){").append(line);
             methodSb.append(tab).append(tab)
-                    .append("System.out.println(\"---- LOG -------\");")
+                    .append("System.out.println(\"---- proxy功能增强 -------\");")
                     .append(line);
             if(returnTypeNam.equals("void")) {
                 methodSb.append(tab).append(tab).append("targ.").append(methodNam)
