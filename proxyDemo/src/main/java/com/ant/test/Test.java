@@ -4,6 +4,10 @@ import com.ant.dao.IndexDao;
 import com.ant.dao.IndexDaoImpl;
 import com.ant.proxy.ProxyUtil;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 /**
  * @author gaoxx gaoxx@fxiaoke.com
  * @ClassName: Test

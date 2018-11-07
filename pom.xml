@@ -10,6 +10,7 @@
   <modules>
     <module>ant-spring-web</module>
     <module>proxyDemo</module>
+      <module>dymicProxyImpl</module>
   </modules>
   <packaging>pom</packaging>
 
