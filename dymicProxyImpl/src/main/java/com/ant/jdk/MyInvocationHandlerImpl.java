@@ -1,6 +1,4 @@
-package com.ant.jdk.impl;
-
-import com.ant.jdk.MyInvocationHandler;
+package com.ant.jdk;
 
 import java.lang.reflect.Method;
 

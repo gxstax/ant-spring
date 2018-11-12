@@ -38,6 +38,7 @@ public class ProxyUtil {
 
         packageSb.append("package com.google;").append(line);
         importSb.append("import ").append(targetDaoNam).append(";").append(line);
+        importSb.append("import java.lang.reflect.Method;");
         classSb.append("public class $proxy implements ").append(targetDao)
                 .append("{").append(line);
         constracSb.append(tab).append("public ").append(targetDao)
@@ -52,6 +53,8 @@ public class ProxyUtil {
             String methodNam = methods[i].getName();
             String argContent = "";
             String paramsContent = "";
+
+            String methodTarget = targetInf.getName();
             Class args[] = methods[i].getParameterTypes();
             int j = 0;
             for (Class arg : args) {
@@ -66,13 +69,14 @@ public class ProxyUtil {
             methodSb.append(tab).append("@Override").append(line);
             methodSb.append(tab).append("public ").append(returnTypeNam).append(" ")
                     .append(methodNam).append("(").append(argContent)
-                    .append("){").append(line);
+                    .append(") throws Exception {").append(line);
             methodSb.append(tab).append(tab)
-                    .append("System.out.println(\"---- proxy功能增强 -------\");")
+                    .append("Method method = Class.forName(\"").append(methodTarget)
+                    .append("\").getMethod(\"").append(methodNam).append("\");")
                     .append(line);
             if(returnTypeNam.equals("void")) {
-                methodSb.append(tab).append(tab).append("targ.").append(methodNam)
-                        .append("(").append(paramsContent).append(");").append(line);
+                methodSb.append(tab).append(tab).append("targ.invoke(method);").append(line);
+//                        .append("(").append(paramsContent).append(");").append(line);
                 methodSb.append(tab).append("}").append(line);
             }else {
                 methodSb.append(tab).append(tab).append("return targ.").append(methodNam)
