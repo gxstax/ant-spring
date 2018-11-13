@@ -11,6 +11,7 @@
     <module>ant-spring-web</module>
     <module>proxyDemo</module>
       <module>dymicProxyImpl</module>
+      <module>bloom-filter-demo</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -25,9 +26,12 @@
   </properties>
 
   <dependencies>
-
-
-
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.0.9.RELEASE</version>
+    </dependency>
   </dependencies>
 
   <build>

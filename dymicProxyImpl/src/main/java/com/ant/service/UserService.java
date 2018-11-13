@@ -10,15 +10,12 @@ import com.ant.dao.UserDao;
  * @Version 1.0
  */
 public class UserService {
-    public UserDao getDao() {
-        return dao;
-    }
-
-    public void setDao(UserDao dao) {
-        this.dao = dao;
-    }
 
     public UserDao dao;
+
+//    public UserService(UserDao dao) {
+//        this.dao = dao;
+//    }
 
     public void query() {
         dao.query();

@@ -2,6 +2,7 @@ package com.ant.test;
 
 import com.ant.config.AppConfig;
 import com.ant.service.UserService;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -17,5 +18,6 @@ public class Test {
                 new AnnotationConfigApplicationContext(AppConfig.class);
         UserService service = (UserService) acx.getBean("userService");
         service.queryUser();
+
     }
 }
