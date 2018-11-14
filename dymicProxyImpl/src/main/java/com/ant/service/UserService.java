@@ -13,9 +13,9 @@ public class UserService {
 
     public UserDao dao;
 
-//    public UserService(UserDao dao) {
-//        this.dao = dao;
-//    }
+    public UserService(UserDao dao) {
+        this.dao = dao;
+    }
 
     public void query() {
         dao.query();

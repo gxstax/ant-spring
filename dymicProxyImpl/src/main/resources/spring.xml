@@ -6,7 +6,7 @@
     <bean id="userDao" class="com.ant.dao.UserDaoImpl"/>
 
     <bean id="userService" class="com.ant.service.UserService">
-        <!--<constructor-arg ref="userDao" name="dao"></constructor-arg>-->
+        <constructor-arg ref="userDao" name="dao"></constructor-arg>
 
     </bean>>
 
