@@ -12,6 +12,7 @@
     <module>proxyDemo</module>
       <module>dymicProxyImpl</module>
       <module>bloom-filter-demo</module>
+      <module>spring-apply</module>
   </modules>
   <packaging>pom</packaging>
 

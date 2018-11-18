@@ -19,7 +19,10 @@ import java.lang.reflect.Proxy;
  * @Version 1.0
  */
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+//        IndexDao dao = (IndexDao) ProxyUtil.newInstance(IndexDao.class, new MyInvocationHandlerImpl());
+//        dao.proxy();
+
 //        IndexDao dao = (IndexDao) ProxyUtil.newInstance(IndexDao.class, new MyInvocationHandlerImpl());
 //        dao.proxy();
 
