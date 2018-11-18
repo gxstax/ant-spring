@@ -8,5 +8,5 @@ package com.ant.dao;
  * @Version 1.0
  */
 public interface IndexDao {
-    public void query(String str);
+    public void query();
 }

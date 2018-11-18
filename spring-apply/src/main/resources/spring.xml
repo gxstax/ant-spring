@@ -7,19 +7,30 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context/spring-context.xsd"
+        default-autowire="constructor">
 
-    <context:component-scan base-package="com.ant"></context:component-scan>
+
+
+    <!-- 自动装配 -->
+    <bean id="dao" class="com.ant.dao.IndexDaoImpl"></bean>
+    <bean id="ant" class="com.ant.dao.IndexDaoImpl1"></bean>
+
+
+    <bean id="service" class="com.ant.dao.IndexService"></bean>
+
+
+    <!--<context:component-scan base-package="com.ant"></context:component-scan>-->
 
     <!-- Spring 后期版本已经不需要下面这个注解，因为合并到了component-scan 中-->
     <!--<context:annotation-config></context:annotation-config>-->
 
-    <!--<bean id="dao" class="com.ant.dao.IndexDaoImpl" p:str="ttttttt">-->
+    <!--<bean id="dao" class="com.ant.dao.IndexDaoImpl" p:str="rrrrrrrr">-->
         <!--&lt;!&ndash;<property name="str" value="ssssss"></property>&ndash;&gt;-->
     <!--</bean>-->
 
-    <bean id="service" class="com.ant.dao.IndexService" c:dao-ref="dao">
-        <!--<property name="dao" ref="dao"></property>-->
-        <!--<constructor-arg ref="dao" name="dao"></constructor-arg>-->
-    </bean>
+    <!--<bean id="service" class="com.ant.dao.IndexService" c:dao-ref="dao">-->
+        <!--&lt;!&ndash;<property name="dao" ref="dao"></property>&ndash;&gt;-->
+        <!--&lt;!&ndash;<constructor-arg ref="dao" name="dao"></constructor-arg>&ndash;&gt;-->
+    <!--</bean>-->
 </beans>

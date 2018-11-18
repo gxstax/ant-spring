@@ -1,6 +1,8 @@
 package com.ant.test;
 
+import com.ant.config.AppConfig;
 import com.ant.dao.IndexService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.xml.ws.Service;
@@ -14,10 +16,14 @@ import javax.xml.ws.Service;
  */
 public class Test {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext classPathXmlApplicationContext
-                = new ClassPathXmlApplicationContext("classpath:spring.xml");
+//        ClassPathXmlApplicationContext classPathXmlApplicationContext
+//                = new ClassPathXmlApplicationContext("classpath:spring.xml");
+//        IndexService service = (IndexService) classPathXmlApplicationContext.getBean(IndexService.class);
+//        service.service();
+        AnnotationConfigApplicationContext annotationConfigApplicationContext
+                = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        IndexService service = (IndexService) classPathXmlApplicationContext.getBean(IndexService.class);
+        IndexService service = (IndexService) annotationConfigApplicationContext.getBean("ant.indexService");
         service.service();
     }
 }
