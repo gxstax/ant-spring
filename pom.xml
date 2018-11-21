@@ -4,15 +4,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ant-spring-proj</groupId>
+  <groupId>ant-spring</groupId>
   <artifactId>ant-spring</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
-    <module>ant-spring-web</module>
-    <module>proxyDemo</module>
-      <module>dymicProxyImpl</module>
-      <module>bloom-filter-demo</module>
-      <module>spring-apply</module>
+    <module>dymicProxyImpl</module>
+    <module>bloom-filter-demo</module>
+    <module>spring-apply</module>
+    <module>singleton</module>
   </modules>
   <packaging>pom</packaging>
 
