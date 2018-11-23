@@ -1,4 +1,4 @@
-package com.ant.util;
+package main.java.com.ant.util;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

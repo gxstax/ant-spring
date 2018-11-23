@@ -11,7 +11,9 @@
     <module>dymicProxyImpl</module>
     <module>bloom-filter-demo</module>
     <module>spring-apply</module>
+    <module>proxyDemo</module>
     <module>singleton</module>
+      <module>proxyDemo</module>
   </modules>
   <packaging>pom</packaging>
 

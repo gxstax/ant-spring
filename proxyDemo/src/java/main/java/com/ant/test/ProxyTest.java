@@ -1,4 +1,4 @@
-package com.ant.test;
+package main.java.com.ant.test;
 
 import com.ant.dao.IndexDao;
 import com.ant.dao.IndexDaoImpl;

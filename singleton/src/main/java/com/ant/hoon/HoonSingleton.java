@@ -10,7 +10,7 @@ package com.ant.hoon;
 public class HoonSingleton {
     private static HoonSingleton instance = null;
 
-    private HoonSingleton () {
+    public HoonSingleton() {
 
     }
 

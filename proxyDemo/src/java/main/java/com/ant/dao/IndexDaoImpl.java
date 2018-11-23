@@ -1,4 +1,4 @@
-package com.ant.dao;
+package main.java.com.ant.dao;
 
 /**
  * @author gaoxx gaoxx@fxiaoke.com

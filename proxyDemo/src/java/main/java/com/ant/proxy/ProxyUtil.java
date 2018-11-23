@@ -1,4 +1,4 @@
-package com.ant.proxy;
+package main.java.com.ant.proxy;
 
 import javax.tools.JavaCompiler;
 import javax.tools.StandardJavaFileManager;
