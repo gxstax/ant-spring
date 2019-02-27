@@ -12,6 +12,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/ant-spring-web/pom.xml" />
+        <option value="$PROJECT_DIR$/netty/pom.xml" />
         <option value="$PROJECT_DIR$/proxyDemo/pom.xml" />
       </set>
     </option>

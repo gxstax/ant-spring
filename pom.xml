@@ -13,7 +13,7 @@
     <module>spring-apply</module>
     <module>proxyDemo</module>
     <module>singleton</module>
-      <module>proxyDemo</module>
+    <module>proxyDemo</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -34,6 +34,15 @@
       <artifactId>spring-context</artifactId>
       <version>5.0.9.RELEASE</version>
     </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+    <!--<dependency>-->
+      <!--<groupId>io.netty</groupId>-->
+      <!--<artifactId>netty-all</artifactId>-->
+      <!--<version>4.1.10.Final</version>-->
+      <!--<scope>compile</scope>-->
+    <!--</dependency>-->
   </dependencies>
 
   <build>

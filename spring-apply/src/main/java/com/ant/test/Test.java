@@ -23,7 +23,7 @@ public class Test {
         AnnotationConfigApplicationContext annotationConfigApplicationContext
                 = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        IndexService service = (IndexService) annotationConfigApplicationContext.getBean("ant.indexService");
-        service.service();
+//        IndexService service = (IndexService) annotationConfigApplicationContext.getBean("ant.indexService");
+//        service.service();
     }
 }

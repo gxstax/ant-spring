@@ -8,6 +8,6 @@
     <bean id="userService" class="com.ant.service.UserService">
         <constructor-arg ref="userDao" name="dao"></constructor-arg>
 
-    </bean>>
+    </bean>
 
 </beans>
