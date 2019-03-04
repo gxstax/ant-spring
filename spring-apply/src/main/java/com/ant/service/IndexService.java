@@ -1,5 +1,6 @@
-package com.ant.dao;
+package com.ant.service;
 
+import com.ant.dao.IndexDao;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
@@ -11,17 +12,20 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * @author gaoxx gaoxx@fxiaoke.com
+ * @author Ant
  * @ClassName: IndexService
  * @Description: TODO
  * @datetime 2018/11/18 14:04
  * @Version 1.0
  */
-@Service
+//@Service
 public class IndexService {
 
+//    @Autowired
+//    private IndexDao dao;
+
     @Autowired
-    private IndexDao dao;
+    private TestService testService;
 
 //    @Lookup
 //    public abstract IndexDao getDao();

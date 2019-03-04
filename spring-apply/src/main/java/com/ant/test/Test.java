@@ -1,14 +1,12 @@
 package com.ant.test;
 
 import com.ant.config.AppConfig;
-import com.ant.dao.IndexService;
+import com.ant.dao.IndexDao;
+import com.ant.service.IndexService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.xml.ws.Service;
 
 /**
- * @author gaoxx gaoxx@fxiaoke.com
+ * @author Ant
  * @ClassName: Test
  * @Description: TODO
  * @datetime 2018/11/18 14:05
@@ -21,7 +19,12 @@ public class Test {
 //        IndexService service = (IndexService) classPathXmlApplicationContext.getBean(IndexService.class);
 //        service.service();
         AnnotationConfigApplicationContext annotationConfigApplicationContext
-                = new AnnotationConfigApplicationContext(AppConfig.class);
+                = new AnnotationConfigApplicationContext();
+        annotationConfigApplicationContext.getEnvironment().setActiveProfiles("dao2");
+        annotationConfigApplicationContext.register(AppConfig.class);
+        annotationConfigApplicationContext.refresh();
+
+        System.out.println(annotationConfigApplicationContext.getBean(IndexDao.class).getClass().getSimpleName());
 
 //        IndexService service = (IndexService) annotationConfigApplicationContext.getBean("ant.indexService");
 //        service.service();

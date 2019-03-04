@@ -7,17 +7,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd"
-        default-autowire="constructor">
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
 
 
     <!-- 自动装配 -->
-    <bean id="dao" class="com.ant.dao.IndexDaoImpl"></bean>
-    <bean id="ant" class="com.ant.dao.IndexDaoImpl1"></bean>
+    <!--<bean id="dao" class="com.ant.dao.IndexDaoImpl"></bean>-->
+    <!--<bean id="ant" class="com.ant.dao.IndexDaoImpl1"></bean>-->
 
 
-    <bean id="service" class="com.ant.dao.IndexService"></bean>
+    <!--<bean id="service" class="com.ant.service.IndexService"></bean>-->
 
 
     <!--<context:component-scan base-package="com.ant"></context:component-scan>-->
@@ -29,7 +28,7 @@
         <!--&lt;!&ndash;<property name="str" value="ssssss"></property>&ndash;&gt;-->
     <!--</bean>-->
 
-    <!--<bean id="service" class="com.ant.dao.IndexService" c:dao-ref="dao">-->
+    <!--<bean id="service" class="com.ant.service.IndexService" c:dao-ref="dao">-->
         <!--&lt;!&ndash;<property name="dao" ref="dao"></property>&ndash;&gt;-->
         <!--&lt;!&ndash;<constructor-arg ref="dao" name="dao"></constructor-arg>&ndash;&gt;-->
     <!--</bean>-->

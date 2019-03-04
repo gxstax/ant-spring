@@ -1,7 +1,7 @@
 package com.ant.enumsingleton;
 
 /**
- * @author gaoxx gaoxx@fxiaoke.com
+ * @author Ant
  * @ClassName: Test
  * @Description: TODO
  * @datetime 2018/11/23 16:42

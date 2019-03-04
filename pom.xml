@@ -14,6 +14,7 @@
     <module>proxyDemo</module>
     <module>singleton</module>
     <module>proxyDemo</module>
+    <module>spring-aop</module>
   </modules>
   <packaging>pom</packaging>
 

@@ -8,13 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 /**
- * @author gaoxx gaoxx@fxiaoke.com
+ * @author Ant
  * @ClassName: MyBeanNameGenerator
- * @Description: TODO
+ * @Description: 自定义bean的别名
  * @datetime 2018/11/18 16:25
  * @Version 1.0
  */
-@Component
 public class MyBeanNameGenerator extends AnnotationBeanNameGenerator {
 
     @Override

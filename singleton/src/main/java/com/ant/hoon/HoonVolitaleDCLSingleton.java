@@ -1,7 +1,7 @@
 package com.ant.hoon;
 
 /**
- * @author gaoxx gaoxx@fxiaoke.com
+ * @author Ant
  * @ClassName: HoonSingleton
  * @Description: 懒汉模式单例(volatile + DCL模式解决线程安全问题)
  * @datetime 2018/11/21 8:52
