@@ -18,8 +18,11 @@ public class Test {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
-        TempFactoryBean myFactoryBean = (TempFactoryBean) applicationContext.getBean("myFactoryBean");
+        TempFactoryBean tempFactoryBean = (TempFactoryBean) applicationContext.getBean("myFactoryBean");
 
-        myFactoryBean.testFactoryBean();
+        tempFactoryBean.testFactoryBean();
+
+        MyFactoryBean myFactoryBean = (MyFactoryBean) applicationContext.getBean("&myFactoryBean");
+        myFactoryBean.test();
     }
 }
