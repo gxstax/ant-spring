@@ -16,6 +16,7 @@
     <module>proxyDemo</module>
     <module>spring-aop</module>
       <module>spring-beanfactory-factorybean</module>
+    <module>spring-mybatis</module>
   </modules>
   <packaging>pom</packaging>
 
