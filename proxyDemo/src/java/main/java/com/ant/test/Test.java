@@ -1,7 +1,7 @@
 package main.java.com.ant.test;
 
-import com.ant.dao.IndexDao;
-import com.ant.dao.IndexDaoImpl;
+import com.ant.factorybean.IndexDao;
+import com.ant.factorybean.IndexDaoImpl;
 import com.ant.proxy.ProxyUtil;
 
 import java.lang.reflect.InvocationHandler;
@@ -23,8 +23,8 @@ public class Test {
 //
 //        proxy.query();
 
-//        UserDao dao = (UserDao) ProxyUtil.instance(new UserDaoImpl());
-//        System.out.println(dao.querys("ant"));
+//        UserDao factorybean = (UserDao) ProxyUtil.instance(new UserDaoImpl());
+//        System.out.println(factorybean.querys("ant"));
 
         IndexDao dao = (IndexDao) ProxyUtil.instance(new IndexDaoImpl());
         dao.proxy();

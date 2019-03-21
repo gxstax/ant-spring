@@ -1,7 +1,5 @@
 package org.spring.util;
 
-import com.ant.dao.UserDaoImpl;
-import com.sun.xml.internal.ws.util.StringUtils;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;

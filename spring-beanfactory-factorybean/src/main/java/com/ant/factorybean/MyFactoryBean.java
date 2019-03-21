@@ -1,4 +1,4 @@
-package com.ant.dao;
+package com.ant.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;

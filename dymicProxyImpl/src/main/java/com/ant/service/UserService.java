@@ -1,6 +1,6 @@
 package com.ant.service;
 
-import com.ant.dao.UserDao;
+import com.ant.factorybean.UserDao;
 
 /**
  * @author gaoxx gaoxx@fxiaoke.com

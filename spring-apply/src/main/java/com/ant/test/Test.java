@@ -1,8 +1,7 @@
 package com.ant.test;
 
 import com.ant.config.AppConfig;
-import com.ant.dao.IndexDao;
-import com.ant.service.IndexService;
+import com.ant.factorybean.IndexDao;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**

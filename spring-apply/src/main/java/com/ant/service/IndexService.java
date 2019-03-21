@@ -1,6 +1,5 @@
 package com.ant.service;
 
-import com.ant.dao.IndexDao;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
@@ -8,8 +7,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @author Ant
@@ -22,7 +19,7 @@ import javax.annotation.Resource;
 public class IndexService {
 
 //    @Autowired
-//    private IndexDao dao;
+//    private IndexDao factorybean;
 
     @Autowired
     private TestService testService;
@@ -31,16 +28,16 @@ public class IndexService {
 //    public abstract IndexDao getDao();
 
 //    public IndexService (IndexDao ant) {
-//        this.dao = ant;
+//        this.factorybean = ant;
 //    }
 
     public void service()
     {
         System.out.println("service--  " + this.hashCode());
-//        System.out.println("dao--- " + getDao().hashCode());
+//        System.out.println("factorybean--- " + getDao().hashCode());
     }
 
-//    public void setAnt(IndexDao dao) {
-//        this.dao = dao;
+//    public void setAnt(IndexDao factorybean) {
+//        this.factorybean = factorybean;
 //    }
 }

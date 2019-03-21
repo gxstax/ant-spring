@@ -3,7 +3,7 @@ package com.ant.jdk;//
 // (powered by Fernflower decompiler)
 //
 
-import com.ant.dao.IndexDao;
+import com.ant.factorybean.IndexDao;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -63,7 +63,7 @@ public final class $Proxy0 extends Proxy implements IndexDao {
         try {
             m1 = Class.forName("java.lang.Object").getMethod("equals", Class.forName("java.lang.Object"));
             m2 = Class.forName("java.lang.Object").getMethod("toString");
-            m3 = Class.forName("com.ant.dao.IndexDao").getMethod("proxy");
+            m3 = Class.forName("com.ant.factorybean.IndexDao").getMethod("proxy");
             m0 = Class.forName("java.lang.Object").getMethod("hashCode");
         } catch (NoSuchMethodException var2) {
             throw new NoSuchMethodError(var2.getMessage());

@@ -1,4 +1,4 @@
-package com.ant.dao;
+package com.ant.factorybean;
 
 /**
  * @author Ant

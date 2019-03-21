@@ -1,4 +1,4 @@
-package com.ant.dao;
+package com.ant.factorybean;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
@@ -8,16 +8,16 @@ import javax.annotation.PostConstruct;
 /**
  * @author Ant
  * @ClassName: IndexDaoImpl
- * @Description: TODO
+ * @Description: IndexDaoImpl
  * @datetime 2018/11/18 14:03
  * @Version 1.0
  */
 @Repository
-@Profile("dao1")
-public class IndexDaoImpl1 implements IndexDao {
+@Profile("dao2")
+public class IndexDaoImpl2 implements IndexDao {
 
-    public IndexDaoImpl1(){
-        System.out.println("Construct1");
+    public IndexDaoImpl2(){
+        System.out.println("Construct2");
     }
 
     @Override
@@ -26,6 +26,6 @@ public class IndexDaoImpl1 implements IndexDao {
 
     @PostConstruct
     public void afterPropertiesSet() throws Exception {
-        System.out.println("IndexDaoImpl_1---这里可以在项目启动的时候加载配置文件信息");
+        System.out.println("IndexDaoImpl_2--这里可以在项目启动的时候加载配置文件信息");
     }
 }

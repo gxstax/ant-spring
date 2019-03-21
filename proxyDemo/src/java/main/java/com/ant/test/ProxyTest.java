@@ -1,7 +1,7 @@
 package main.java.com.ant.test;
 
-import com.ant.dao.IndexDao;
-import com.ant.dao.IndexDaoImpl;
+import com.ant.factorybean.IndexDao;
+import com.ant.factorybean.IndexDaoImpl;
 import com.ant.util.MyInvocationHandler;
 import sun.misc.ProxyGenerator;
 

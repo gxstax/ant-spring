@@ -1,8 +1,8 @@
 package com.ant;
 
 import com.ant.conf.AppConfig;
-import com.ant.dao.MyFactoryBean;
-import com.ant.dao.TempFactoryBean;
+import com.ant.factorybean.MyFactoryBean;
+import com.ant.factorybean.TempFactoryBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
